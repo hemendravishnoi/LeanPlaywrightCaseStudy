@@ -9,9 +9,6 @@ class CheckoutComplete {
 
     async verifyCompletionMessage(message){
         let completionMessage = await this.page.locator(this.message).textContent()
-
-        console.log(completionMessage)
-        
         await expect(completionMessage).toBe(message)
     }
 }
