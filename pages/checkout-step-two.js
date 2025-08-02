@@ -13,6 +13,7 @@ class CheckoutTwo {
 
     async clcikFinish(){
         await this.page.locator(this.finish).click()
+        await expect(this.page).toHaveURL(/.*checkout-complete.*/)
     }
 }
 module.exports = CheckoutTwo;

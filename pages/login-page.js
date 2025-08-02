@@ -1,3 +1,5 @@
+// @ts-check
+const {expect} = require('@playwright/test')
 class LoginPage {
     constructor(page) {
         this.page = page
@@ -17,5 +19,6 @@ class LoginPage {
         await this.page.fill(this.username,username)
         await this.page.fill(this.password,password)
         await this.page.click(this.submit)
+        await expect(this.page).toHaveURL(/.*inventory.*/)
     }
 }module.exports = LoginPage;

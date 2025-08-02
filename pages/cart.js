@@ -13,6 +13,7 @@ class Cart {
     }
     async clickCheckout(){
         await this.page.locator(this.checkout).click()
+        await expect(this.page).toHaveURL(/.*checkout-step-one.*/)
     }
 }
 module.exports = Cart;

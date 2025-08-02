@@ -17,6 +17,7 @@ class CheckoutOne {
 
     async clickContinue(){
         await this.page.locator(this.continue).click()
+        await expect(this.page).toHaveURL(/.*checkout-step-two.*/)
     }
 }
 module.exports = CheckoutOne;

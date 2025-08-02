@@ -18,8 +18,6 @@ test('Verify user completing a successful checkout.', async ({ page}) => {
     //Login to application
     await loginpage.loginToApplication(LoginData.username,LoginData.password)
 
-    // Assertion after successful login
-    await expect(page.url()).toContain('inventory')
     //Inventory Page object creation
     const inventory = new Inventory(page)
     //Selection of 3 random items as per instruction
